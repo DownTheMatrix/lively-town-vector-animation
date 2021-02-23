@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.art-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#cityscape {
+    width: 100%;
+    height: 100%;
+}
+
+#TRAIN {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    bottom: 9.2%;
+    right: 0;
+}
+
+#cloud-large {
+    position: absolute;
+    width: 370px;
+    height: auto;
+    top: 70px;
+    left: 137px;
+    opacity: .7;
+}
+
+#cloud-medium {
+    position: absolute;
+    width: 280px;
+    height: auto;
+    top: 300px;
+    right: 74px;
+    opacity: .5;
+}
+
+#cloud-small {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    top: 150px;
+    left: 961px;
+    opacity: .8;
+}
+
+#car-blue {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    bottom: 18%;
+    right: 10px;
+}
+
+#car-yellow {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    bottom: 12%;
+    left: 200px;
+    display: none;
+}
