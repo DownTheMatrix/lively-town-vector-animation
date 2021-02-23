@@ -30,7 +30,8 @@ body {
   height: auto;
   position: absolute;
   bottom: 9.2%;
-  right: 0; }
+  right: 0;
+  z-index: 100; }
 
 #cloud-large {
   position: absolute;
@@ -68,5 +69,12 @@ body {
   width: 150px;
   height: auto;
   bottom: 12%;
-  left: 200px;
-  display: none; }
+  left: 200px; }
+
+#train-station {
+  position: absolute;
+  width: 740px;
+  height: auto;
+  bottom: 9%;
+  left: -20px;
+  z-index: 10; }

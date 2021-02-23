@@ -36,6 +36,7 @@ body {
     position: absolute;
     bottom: 9.2%;
     right: 0;
+    z-index: 100;
 }
 
 #cloud-large {
@@ -79,5 +80,13 @@ body {
     height: auto;
     bottom: 12%;
     left: 200px;
-    display: none;
+}
+
+#train-station {
+    position: absolute;
+    width: 740px;
+    height: auto;
+    bottom: 9%;
+    left: -20px;
+    z-index: 10;
 }
