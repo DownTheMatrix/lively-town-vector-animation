@@ -1,76 +1,110 @@
-const TRAIN = document.querySelector("#TRAIN");
-const CLOUD_SMALL = document.querySelector("#cloud-small");
-const CLOUD_MEDIUM = document.querySelector("#cloud-medium");
-const CLOUD_LARGE = document.querySelector("#cloud-large");
-const CAR_BLUE = document.querySelector("#car-blue");
-const CAR_YELLOW = document.querySelector("#car-yellow");
+function init() {
+  "use strict";
 
-const tl = gsap.timeline();
+  /* DOM Elements */
+  const TRAIN = document.querySelector("#TRAIN");
+  const CLOUD_SMALL = document.querySelector("#cloud-small");
+  const CLOUD_MEDIUM = document.querySelector("#cloud-medium");
+  const CLOUD_LARGE = document.querySelector("#cloud-large");
+  const CAR_BLUE = document.querySelector("#car-blue");
+  const CAR_YELLOW = document.querySelector("#car-yellow");
 
-/* Set initial values */
-gsap.set(TRAIN, {
-  x: "500px",
-});
+  /* Clouds Animation */
+  function animateClouds() {
+    gsap.set(CLOUD_LARGE, {
+      x: "-500px",
+    });
 
-gsap.set(CLOUD_LARGE, {
-  x: "-500px",
-});
+    gsap.set(CLOUD_MEDIUM, {
+      x: "500px",
+    });
 
-gsap.set(CLOUD_MEDIUM, {
-  x: "800px",
-});
+    gsap.set(CLOUD_SMALL, {
+      x: "800px",
+    });
 
-gsap.set(CLOUD_SMALL, {
-  x: "600px",
-});
+    const tl = gsap.timeline();
+    tl.to(CLOUD_LARGE, {
+      repeat: -1,
+      duration: 60,
+      ease: "linear",
+      x: "1800px",
+    })
+      .to(
+        CLOUD_MEDIUM,
+        {
+          repeat: -1,
+          duration: 50,
+          ease: "linear",
+          x: "-2000px",
+        },
+        "<1"
+      )
+      .to(
+        CLOUD_SMALL,
+        {
+          repeat: -1,
+          duration: 50,
+          x: "-1800px",
+          ease: "linear",
+        },
+        "<2"
+      );
+    return tl;
+  }
 
-gsap.set(CAR_BLUE, {
-  x: "300px",
-});
+  function animateTrain() {
+    gsap.set(TRAIN, {
+      x: "500px",
+    });
 
-gsap.set(CAR_YELLOW, {
-  x: "-100px",
-});
+    const tl = gsap.timeline();
+    tl.to(TRAIN, {
+      repeat: -1,
+      duration: 10,
+      xPercent: -500,
+      ease: "linear",
+    });
+    return tl;
+  }
 
-/* Animate values */
-gsap.to(CAR_BLUE, {
-  repeat: -1,
-  duration: 10,
-  ease: "linear",
-  x: "-1800px",
-});
+  function animateCarBlue() {
+    gsap.set(CAR_BLUE, {
+      x: "300px",
+    });
 
-gsap.to(CAR_YELLOW, {
-  repeat: -1,
-  duration: 10,
-  ease: "linear",
-  x: "2000px",
-});
+    const tl = gsap.timeline();
+    tl.to(CAR_BLUE, {
+      repeat: -1,
+      duration: 10,
+      ease: "linear",
+      x: "-1800px",
+    });
+  }
 
-gsap.to(CLOUD_LARGE, {
-  repeat: -1,
-  duration: 60,
-  ease: "linear",
-  x: "1800px",
-});
+  function animateCarYellow() {
+    gsap.set(CAR_YELLOW, {
+      x: "-100px",
+    });
 
-gsap.to(CLOUD_MEDIUM, {
-  repeat: -1,
-  duration: 50,
-  ease: "linear",
-  x: "-2000px",
-});
+    const tl = gsap.timeline();
+    tl.to(
+      CAR_YELLOW,
+      {
+        repeat: -1,
+        duration: 10,
+        ease: "linear",
+        x: "2000px",
+      },
+      "+=1"
+    );
+  }
 
-gsap.to(CLOUD_SMALL, {
-  repeat: -1,
-  duration: 50,
-  x: "-1800px",
-  ease: "linear",
-});
+  const masterTimeline = gsap.timeline();
+  masterTimeline.add(animateClouds);
+  masterTimeline.add(animateTrain);
+  masterTimeline.add(animateCarBlue);
+  masterTimeline.add(animateCarYellow);
+}
 
-tl.to(TRAIN, {
-  repeat: -1,
-  duration: 10,
-  xPercent: -500,
-  ease: "linear",
-});
+document.addEventListener("DOMContentLoaded", init);
