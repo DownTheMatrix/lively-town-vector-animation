@@ -8,8 +8,16 @@ function init() {
   const CLOUD_LARGE = document.querySelector("#cloud-large");
   const CAR_BLUE = document.querySelector("#car-blue");
   const CAR_YELLOW = document.querySelector("#car-yellow");
+  const TRAIN_WHEELS = document.querySelector(".train-wheels");
 
-  /* Clouds Animation */
+  gsap.to(TRAIN_WHEELS, {
+    repeat: -1,
+    rotate: "45deg",
+    ease: "linear",
+    transformOrigin: "50% 50%",
+  });
+
+  /* Clouds animation */
   function animateClouds() {
     gsap.set(CLOUD_LARGE, {
       x: "-500px",
@@ -53,6 +61,7 @@ function init() {
     return tl;
   }
 
+  /* Train animation */
   function animateTrain() {
     gsap.set(TRAIN, {
       x: "500px",
@@ -68,6 +77,7 @@ function init() {
     return tl;
   }
 
+  /* Blue car animation */
   function animateCarBlue() {
     gsap.set(CAR_BLUE, {
       x: "300px",
@@ -82,6 +92,7 @@ function init() {
     });
   }
 
+  /* Yellow car animation */
   function animateCarYellow() {
     gsap.set(CAR_YELLOW, {
       x: "-100px",
