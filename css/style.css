@@ -20,7 +20,12 @@ body {
 .art-wrapper {
   position: relative;
   width: 100%;
-  height: auto; }
+  height: 100%;
+  background: url("../assets/modern-city-static-background.png") no-repeat center center/cover; }
+  @media (min-width: 768px) {
+    .art-wrapper {
+      background: initial;
+      height: auto; } }
 
 .overlay {
   position: absolute;
@@ -45,33 +50,67 @@ body {
   text-align: center; }
   .text-wrapper .main-heading {
     font-weight: 900;
-    font-size: 10rem;
+    font-size: 3rem;
     text-transform: uppercase;
     color: #ffffff; }
+    @media (min-width: 768px) {
+      .text-wrapper .main-heading {
+        font-size: 4.8rem; } }
+    @media (min-width: 1024px) {
+      .text-wrapper .main-heading {
+        font-size: 7rem; } }
+    @media (min-width: 1440px) {
+      .text-wrapper .main-heading {
+        font-size: 10rem; } }
   .text-wrapper .main-subheading {
     font-weight: 800;
-    font-size: 3.2rem;
+    font-size: 1.8rem;
     color: #ffffff; }
+    @media (min-width: 1024px) {
+      .text-wrapper .main-subheading {
+        font-size: 2.4rem; } }
+    @media (min-width: 1440px) {
+      .text-wrapper .main-subheading {
+        font-size: 3.2rem; } }
   .text-wrapper .main-cta {
     font-family: inherit;
     color: #005ad5;
     font-weight: 900;
-    font-size: 3.6rem;
+    font-size: 1.8rem;
     border: 2px solid #005ad5;
-    margin-top: 2.5rem;
-    width: 35.6rem;
-    height: 9.6rem;
+    margin-top: 1.5rem;
+    width: 15.6rem;
+    height: 4.6rem;
     border-radius: 10rem;
     text-transform: uppercase;
     transition: all 0.2s ease-in-out;
     background-color: #ffffff;
     cursor: pointer; }
+    @media (min-width: 1024px) {
+      .text-wrapper .main-cta {
+        width: 30.6rem;
+        height: 8.6rem;
+        font-size: 2.4rem;
+        margin-top: 2.5rem; } }
+    @media (min-width: 1440px) {
+      .text-wrapper .main-cta {
+        width: 35.6rem;
+        height: 9.6rem;
+        font-size: 3.6rem; } }
     .text-wrapper .main-cta:focus {
       outline: none; }
     .text-wrapper .main-cta:hover {
       background-color: #005ad5;
       border: 2px solid #ffffff;
       color: #ffffff; }
+
+svg {
+  visibility: hidden;
+  opacity: 0; }
+  @media (min-width: 768px) {
+    svg {
+      visibility: visible;
+      opacity: 1; } }
 
 #cityscape {
   width: 100%;

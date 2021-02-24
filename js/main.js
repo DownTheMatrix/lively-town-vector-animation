@@ -108,6 +108,16 @@ function init() {
   masterTimeline.add(animateTrain);
   masterTimeline.add(animateCarBlue);
   masterTimeline.add(animateCarYellow);
+  masterTimeline.paused(true);
+
+  /* Conditionally display animation on large screens */
+  const mediaScreen = window.matchMedia("(min-width: 1024px)");
+
+  if (mediaScreen.matches) {
+    masterTimeline.paused(false);
+  } else {
+    masterTimeline.paused(true);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", init);
