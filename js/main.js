@@ -8,6 +8,12 @@ function init() {
   const CLOUD_LARGE = document.querySelector("#cloud-large");
   const CAR_BLUE = document.querySelector("#car-blue");
   const CAR_YELLOW = document.querySelector("#car-yellow");
+  const MAIN_CTA = document.querySelector(".main-cta");
+  const BRIDGE = document.querySelector("#bridge-group");
+
+  MAIN_CTA.addEventListener("click", function () {
+    BRIDGE.scrollIntoView({ behavior: "smooth" });
+  });
 
   /* Clouds animation */
   function animateClouds() {
