@@ -1,92 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;800;900&display=swap");
+
+$text-border: 2px solid #005ad5;
+$font-primary: "Nunito", sans-serif;
+$color-primary: #005ad5;
+
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    width: 100%;
-    height: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .art-wrapper {
-    position: relative;
-    width: 100%;
-    height: auto;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #010101;
+  mix-blend-mode: multiply;
+  opacity: 0.25;
+  z-index: 300;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-family: $font-primary;
+  text-align: center;
+
+  .main-heading {
+    font-weight: 900;
+    font-size: 10rem;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .main-subheading {
+    font-weight: 800;
+    font-size: 3.2rem;
+    color: #ffffff;
+  }
+
+  .main-cta {
+    font-family: inherit;
+    color: $color-primary;
+    font-weight: 900;
+    font-size: 3.6rem;
+    border: $text-border;
+    margin-top: 2.5rem;
+    width: 35.6rem;
+    height: 9.6rem;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+    }
+  }
 }
 
 #cityscape {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #TRAIN {
-    width: 500px;
-    height: auto;
-    position: absolute;
-    bottom: 9.2%;
-    right: 0;
-    z-index: 100;
+  width: 500px;
+  height: auto;
+  position: absolute;
+  bottom: 9.2%;
+  right: 0;
+  z-index: 100;
 }
 
 #cloud-large {
-    position: absolute;
-    width: 370px;
-    height: auto;
-    top: 70px;
-    left: 137px;
-    opacity: .7;
+  position: absolute;
+  width: 370px;
+  height: auto;
+  top: 70px;
+  left: 137px;
+  opacity: 0.7;
 }
 
 #cloud-medium {
-    position: absolute;
-    width: 280px;
-    height: auto;
-    top: 300px;
-    right: 74px;
-    opacity: .5;
+  position: absolute;
+  width: 280px;
+  height: auto;
+  top: 300px;
+  right: 74px;
+  opacity: 0.5;
 }
 
 #cloud-small {
-    position: absolute;
-    width: 150px;
-    height: auto;
-    top: 150px;
-    left: 961px;
-    opacity: .8;
+  position: absolute;
+  width: 150px;
+  height: auto;
+  top: 150px;
+  left: 961px;
+  opacity: 0.8;
 }
 
 #car-blue {
-    position: absolute;
-    width: 150px;
-    height: auto;
-    bottom: 18%;
-    right: 10px;
+  position: absolute;
+  width: 150px;
+  height: auto;
+  bottom: 18%;
+  right: 10px;
 }
 
 #car-yellow {
-    position: absolute;
-    width: 150px;
-    height: auto;
-    bottom: 12%;
-    left: 200px;
+  position: absolute;
+  width: 150px;
+  height: auto;
+  bottom: 12%;
+  left: 200px;
 }
 
 #train-station {
-    position: absolute;
-    width: 740px;
-    height: auto;
-    bottom: 9.1%;
-    left: -20px;
-    z-index: 10;
+  position: absolute;
+  width: 740px;
+  height: auto;
+  bottom: 9.1%;
+  left: -20px;
+  z-index: 10;
 }

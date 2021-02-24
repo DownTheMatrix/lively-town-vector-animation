@@ -8,14 +8,6 @@ function init() {
   const CLOUD_LARGE = document.querySelector("#cloud-large");
   const CAR_BLUE = document.querySelector("#car-blue");
   const CAR_YELLOW = document.querySelector("#car-yellow");
-  const TRAIN_WHEELS = document.querySelector(".train-wheels");
-
-  gsap.to(TRAIN_WHEELS, {
-    repeat: -1,
-    rotate: "45deg",
-    ease: "linear",
-    transformOrigin: "50% 50%",
-  });
 
   /* Clouds animation */
   function animateClouds() {
