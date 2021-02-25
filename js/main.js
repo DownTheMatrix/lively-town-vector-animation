@@ -11,10 +11,6 @@ function init() {
   const MAIN_CTA = document.querySelector(".main-cta");
   const BRIDGE = document.querySelector("#bridge-group");
 
-  MAIN_CTA.addEventListener("click", function () {
-    BRIDGE.scrollIntoView({ behavior: "smooth" });
-  });
-
   /* Clouds animation */
   function animateClouds() {
     gsap.set(CLOUD_LARGE, {
@@ -120,8 +116,14 @@ function init() {
   const mediaScreen = window.matchMedia("(min-width: 1024px)");
 
   if (mediaScreen.matches) {
+    MAIN_CTA.addEventListener("click", function () {
+      BRIDGE.scrollIntoView({ behavior: "smooth" });
+    });
     masterTimeline.paused(false);
   } else {
+    MAIN_CTA.removeEventListener("click", function () {
+      BRIDGE.scrollIntoView({ behavior: "smooth" });
+    });
     masterTimeline.paused(true);
   }
 }
