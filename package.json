@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "gsap": "^3.6.0",
+    "hosted-git-info": "^4.0.2",
     "trim-newlines": "^4.0.2"
   }
 }
