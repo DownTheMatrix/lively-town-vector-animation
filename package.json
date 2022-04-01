@@ -13,6 +13,7 @@
     "node-sass": "^5.0.0"
   },
   "dependencies": {
+    "ansi-regex": "^6.0.1",
     "gsap": "^3.6.0",
     "hosted-git-info": "^4.0.2",
     "minimist": "^1.2.6",
